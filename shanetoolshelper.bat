@@ -1,0 +1,3 @@
+@echo off
+.\VGAudioCli.exe -i %2 -o %1
+echo Dumping %1...

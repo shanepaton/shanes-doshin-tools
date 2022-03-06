@@ -1,0 +1,3 @@
+@echo off
+.\VGAudioCli.exe -i %1
+echo Packing %1...

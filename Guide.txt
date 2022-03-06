@@ -1,0 +1,135 @@
+Shane's Guide to Doshin the Giant Modding
+[Created 1/3/22 [D/M/Y]]
+[Updated 2/3/22 [D/M/Y]]
+
+~~~ MODDING ~~~
+
+	-- Packaging and Repackaging --
+
+		Use GCRebuilder to dump the game and repackage it.
+
+	-- Textures --
+
+		Doshin uses the TPL texture format (openable with BrawlBox) to load textures.
+		They can be viewed and replaced in Brawlbox.
+		Another option if you're using Dolphin you can dump the textures, change them, then load them.
+
+		Doshin also peresumably uses LOD ( Level of Detail ) textures for different distances.
+
+	-- Models --
+
+		Doshin seems to also use the GPL format for its models.
+		I currently don't know how to edit them however you can apparently view them through the Gamecube SDK disk thingy.
+
+	-- BGM --
+
+		The background music can be ripped by using MusyXExtract.py and VGAudio
+		the output file is a mono audio 32Khz 16 bit wav file.
+
+		Music can presumably be reencoded in reverse.
+
+		To create a replacement music file you need to export from Audacity with these settings:
+			- 1 track (Mono)
+			- 32Khz
+			- 16 bit PCM
+			- File must be shorter or the same length as the original. (If it's longer it will crash the game when it's loaded)
+
+		Export settings:
+			Name: (the same name as the file you're replacing)
+			Type: Wav (Microsoft)
+			Encoding: Signed 16-bit PCM
+
+	-- Video Sequences --
+		Doshin uses the THP file format which can be viewed in VLC.
+		They can be encoded and created using THWIMP.
+
+~~~~~~~~~~~~~~~
+
+~~~ FILE STRUCTURE ~~~
+
+	~/--|
+		~/audio-------------------------| Audio / Music
+			~/audio/bgm					----| Background music
+				~/audio/bgm/bg0001l			----| Title Screen Music [Left Channel]
+				~/audio/bgm/bg0001r			----| Title Screen Music [Right Channel]
+				~/audio/bgm/bg2001l			----| Village Sounds 1   [Left Channel?]
+				~/audio/bgm/bg2001			----| Village Sounds 1   [Right Channel?]
+				~/audio/bgm/bg2002l			----| Village Sounds 2   [Left Channel?]
+				~/audio/bgm/bg2002			----| Village Sounds 2   [Right Channel?]
+				~/audio/bgm/bg2003l			----| Village Sounds 3   [Left Channel?]
+				~/audio/bgm/bg2003			----| Village Sounds 3   [Right Channel?]
+				~/audio/bgm/bg2004l			----| Village Sounds 4   [Left Channel?]
+				~/audio/bgm/bg2004			----| Village Sounds 4   [Right Channel?]
+				~/audio/bgm/bg2005l			----| Village Sounds 5?  [Left Channel?]
+				~/audio/bgm/bg2005			----| Village Sounds 5?  [Right Channel?]
+				~/audio/bgm/bg2006l			----| Village Sounds 6?  [Left Channel?]
+				~/audio/bgm/bg2006			----| Village Sounds 6?  [Right Channel?]
+				~/audio/bgm/bg2007l			----| Village Sounds 7?  [Left Channel?]
+				~/audio/bgm/bg2007			----| Village Sounds 7?  [Right Channel?]
+				~/audio/bgm/bg2008l			----| Village Sounds 8?  [Left Channel?]
+				~/audio/bgm/bg2008			----| Village Sounds 8?  [Right Channel?]
+				~/audio/bgm/bg2009l			----| Villagers Praying  [Left Channel?]
+				~/audio/bgm/bg2009			----| Villagers Praying  [Right Channel?]
+				~/audio/bgm/bg2011l			----| Village Sounds 9?  [Left Channel?]
+				~/audio/bgm/bg2012l			----| End of Day Music
+				~/audio/bgm/bg2014l 		----| Tragic Sounds?	 [Left Channel?]
+				~/audio/bgm/bg2014 			----| Tragic Sounds?	 [Right Channel?]
+				~/audio/bgm/bg2017l 		----| Western sounds?
+				~/audio/bgm/bg3015  		----| Unknown...
+				~/audio/bgm/bg3017  		----| Unknown...
+				~/audio/bgm/bg3018  		----| Unknown...
+		
+			~/audio/ev						| Environmental Sounds???
+			~/audio/na						| Voice Lines?
+			~/audio/sfx						| Sound effects?
+		
+		~/maps--------------------------| Maps
+			~/maps/MAP1.bin				----| Map 1
+			~/maps/MAP2.bin				    | Map 2
+			~/maps/MAP3.bin				    | Map 3
+			~/maps/MAP4.bin				    | Map 4
+			~/maps/MAP5.bin				    | Map 5
+		
+		~/shapes------------------------| Models and textures
+		
+		~/texture-----------------------| More textures
+
+		~/thp---------------------------| Cutscenes
+			~/thp/ending01f30.thp		----| Ending Cutscene 1
+			~/thp/ending02f30.thp			| Ending Cutscene 2
+			~/thp/ending03f30.thp			| Ending Cutscene 3
+			~/thp/opening01f30.thp			| Opening Cutscene
+			~/thp/stfrlf30.thp				| Ending Credits Cutscene
+
+~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ LINKS ~~~
+
+Software:
+
+    - GCRebuilder - 
+	  	
+		SRC: N/A
+	  	BIN: https://gamebanana.com/tools/6410
+
+    - BrawlBox -
+
+        SRC: https://github.com/libertyernie/brawltools
+        BIN: https://github.com/libertyernie/brawltools/releases
+
+	- VGAudio - 
+		
+		SRC: https://github.com/Thealexbarney/VGAudio
+		BIN: https://github.com/Thealexbarney/VGAudio/releases
+
+	- MusyxExtract - 
+		
+		SRC: https://github.com/Nisto/musyx-extract
+		BIN: https://github.com/Nisto/musyx-extract
+
+    - Thwimp -
+
+        SRC: https://github.com/Tamk1s/Thwimp
+        BIN: https://www.mediafire.com/?n82zcc05aarb6as
+
+    
